@@ -11,8 +11,9 @@
 html{
 	background-color:#F8F8F8;
 }
-.navbar{
-	margin-bottom:0;
+body{
+    color:#666666;
+    font-family:Arial, Helvetica, sans-serif;
 }
 a > img{
 	border:none;
@@ -27,16 +28,63 @@ a > img{
 .data-options a{
 	margin-right:5px;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    color:#666666;
+    font-family:Arial, Helvetica, sans-serif;
+}
+a{
+    color:#004BB4;
+    text-decoration:none;
+}
+.subtle{
+    color:#B4B4B4;
+    letter-spacing:3px;
+    font-size:75%;
+    text-transform:uppercase;
+}
+/*
+ ***************************************
+ HEADER Bootstrap modifications IL 20160920
+ ***************************************
+ */
+.navbar{
+    margin-bottom:0;
+    background-color:#004BB4;
+    padding:15px 15px 15px 0px;
+    border-bottom:1px solid #004BB4;
+}
+.navbar-inverse .navbar-nav > li > a{
+    color:#A3C9D8;
+}
+.navbar-nav{
+    margin-left:53px;
+    padding: 10px 0px 0px 0px;
+    vertical-align:bottom;
+}
+.navbar-form{
+    margin-bottom:0;
+}
+
 /*
   ***************************************
   FOOTER
   ***************************************
  */
 #footer{
-	background-color:#F8F8F8;
-	border-top:1px solid #E7E7E7;
-	padding:10px 0;
-	text-align:center;
+	background-color:#004BB4;
+	border-top:1px solid #004BB4;
+	padding:15px 15px 15px 15px;
+    text-align:left-side;
+    color:#FFFFFF;
+}
+#footer a{
+    color:white;
+    text-decoration:underline;
 }
 /*
   ****************************************
