@@ -3,21 +3,30 @@
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="#all" version="2.0">
 
 	<xsl:template name="header">
-		<div class="navbar navbar-default navbar-static-top" role="navigation">
-			<div class="container-fluid">
-				<div class="navbar-header">
+		<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="container-fluid">
+             <div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"/>
 						<span class="icon-bar"/>
 						<span class="icon-bar"/>
 					</button>
-					<a class="navbar-brand" href="{$url}">
-						<xsl:value-of select="//config/title"/>
+                    <!-- adding amnh logo to header IL 20160919
+                     <xsl:value-of select="//config/title"/> 
+                      class="navbar-brand" out of logo -->
+					<a href="http://www.amnh.org">
+                        <img src="{$display_path}ui/images/amnh_vrt_1cp_wht.png" title="American Museum of Natural History" alt="American Museum of Natural History"/>
 					</a>
+                    <!-- rearranging div elements to align nav and search to bottom 
+                     -->
 				</div>
+                
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
+                        <li>
+                            <a href="{$url}">Home</a>
+                        </li>
 						<li>
 							<a href="{$url}results/">Browse</a>
 						</li>
@@ -26,11 +35,14 @@
 								<a href="{$url}sparql">SPARQL</a>
 							</li>
 						</xsl:if>
+                        <li>
+                            <a href="http://www.amnh.org/our-research/research-library">Research Library</a>
+                            </li>
 					</ul>
 					<div class="col-sm-3 col-md-3 pull-right">
 						<form class="navbar-form" role="search" action="{$url}results/" method="GET">
-							<div class="input-group">
-								<input type="text" class="form-control" placeholder="Search" name="q" id="srch-term"/>
+                            <div class="input-group">
+								<input type="text" class="form-control"  placeholder="Search" name="q" id="srch-term"/>
 								<div class="input-group-btn">
 									<button class="btn btn-default" type="submit">
 										<i class="glyphicon glyphicon-search"/>
@@ -42,11 +54,12 @@
 				</div>
 			</div>
 		</div>
+       <!--     </div> -->
 
 	</xsl:template>
-
+<!-- customize footer in config.xml, edit in exist webapp IL 20160915-->
 	<xsl:template name="footer">
-		<xsl:copy-of select="//config/footer/*"/>
+        <xsl:copy-of select="//config/footer/*"/>
 	</xsl:template>
 
 	<xsl:template name="control-fields">
