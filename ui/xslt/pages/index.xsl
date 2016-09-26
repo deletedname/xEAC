@@ -38,6 +38,7 @@
 	</xsl:template>
 	
 	<xsl:template match="config">
+        <!-- comment out IL 20160915
 		<div class="jumbotron">
 			<div class="container">
 				<div class="row">
@@ -51,13 +52,31 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-8">
+                    <!-- added image to home page IL 20160915
+                     content edited in config.xml through exist webapp IL 20160915 -->
+                    <p/>
+                    <img src="{$display_path}ui/images/LS3-07.jpg" title="Expedition group" alt="Expedition group" style="width:100%"/><p/>
 					<xsl:copy-of select="index/*"/>
 				</div>
-				<div class="col-md-4">
+            </div>
+                <!-- add social media bar, from archer IL 20160915 -->
+            <div class="col-md-3">
+                <div class="highlight">
+                    <h3>Share</h3>
+                    <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+                        <a class="addthis_button_preferred_1"/>
+                        <a class="addthis_button_preferred_2"/>
+                        <a class="addthis_button_compact"/>
+                        <a class="addthis_counter addthis_bubble_style"/>
+                    </div>
+                    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4da715d011c943c2"/>
+                </div>
+            </div>
+				<div class="col-md-3">
 					<div class="highlight data-options">
 						<h3>Export Options</h3>
 						<a href="feed/">
@@ -66,9 +85,8 @@
 						<a href="data.rdf">
 							<img src="{$display_path}ui/images/rdf-large.gif" title="RDF" alt="RDF"/>
 						</a>
-					</div>
+                    </div>
 				</div>
 			</div>
-		</div>
 	</xsl:template>
 </xsl:stylesheet>
